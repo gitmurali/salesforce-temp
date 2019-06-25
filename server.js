@@ -49,11 +49,11 @@ var options = {
 		 'cache-control': 'no-cache',
      'content-type': 'multipart/form-data;'
 	 },
-	 formData:{ client_id: '3MVG9od6vNol.eBjrumF1eDhnajEA3PZOSNkBRpN0JAxXTYYHFwzBd9OvfwUD7NcIS6YCBBUbgBUQQ.4AMQ10',
-     client_secret: '282533150E7E1C6F9CCB21D40D26DECAF72E5E159B077A8118B47D44B237404C',
+	 formData:{ client_id: process.env.CLIENT_ID,
+     client_secret: process.env.CLIENT_SECRET,
      code: code,
      grant_type: 'authorization_code',
-     redirect_uri: 'http://localhost:8000/api/auth/salesForceCallback' }
+     redirect_uri: 'https://carama-salesforce.herokuapp.com/api/auth/salesForceCallback' }
 	 };
 
 	request(options, function (error, response, body) {
@@ -80,9 +80,9 @@ var options = {
 						 "<meta name=\"salesforce-server-callback\" content=\"true\">\n" +
 								 "<meta name=\"salesforce-server-response\" content='"+ Buffer.from(JSON.stringify(bodyRes)).toString("base64") +"'>\n" +
 								// "<meta name=\"salesforce-server-starturl\" content='" + startURL +"'>\n" +
-								"<meta name=\"salesforce-server-starturl\" content=\"http://localhost:8000/login\">\n" +
+								"<meta name=\"salesforce-server-starturl\" content=\"https://carama-salesforce.herokuapp.com\">\n" +
 								"<meta name=\"salesforce-target\" content= \"#salesforce-login\">\n"+
-								"<meta name=\"salesforce-allowed-domains\" content=\"http://localhost\">\n" +
+								"<meta name=\"salesforce-allowed-domains\" content=\"https://carama-salesforce.herokuapp.com/\">\n" +
 								"<script src=\""+ communityUrl + "/servlet/servlet.loginwidgetcontroller?type=javascript_widget\"" +" async defer></script>\n" +
 								"</head><body></body></html>";
 								res.charset = 'utf-8';
