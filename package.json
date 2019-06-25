@@ -1,0 +1,32 @@
+{
+  "name": "demo-crawler",
+  "version": "0.0.0",
+  "description": "demo crawler",
+  "main": "server.js",
+  "author": "Vikas",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "request": "^2.88.0",
+    "url-parse": "^1.0.5"
+  },
+  "scripts": {
+    "hint": "eslint ./lib/*.js ./tests/*.js",
+    "test": "mocha --timeout=15000 tests/*.test.js",
+    "cover": "istanbul cover _mocha --report lcovonly -- --timeout=15000 --reporter spec tests/*.test.js"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.3.0",
+    "istanbul": "^0.4.5",
+    "jsdom": "^9.6.0",
+    "mocha": "^5.2.0",
+    "mocha-testdata": "^1.2.0",
+    "nock": "^9.2.6",
+    "sinon": "^6.0.0",
+    "whacko": "^0.19.1"
+  }
+}
