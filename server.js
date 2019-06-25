@@ -4,7 +4,7 @@ const path = require('path');
 const url = require('url');
 const app = express();
 
-const port = 8000
+const port = process.env.PORT || 8000
 const fs = require('fs');
 
 //app.use(express.static(path.join(__dirname + '/web')));
