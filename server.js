@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
     res.end(readFile('./web/index.html'))
 });
 
+app.get('/profile', (req, res) => {
+	res.writeHead(200,{"Content-Type":"text/html"});
+    res.end(readFile('./web/murali.html'))
+});
+
 app.get('/api/auth/salesForceCallback',(req,res)=>{
     //res.writeHead(200,{"Content-Type":"text/html"});
    //  res.end(readFile('./web/index.html'))
@@ -80,7 +85,7 @@ var options = {
 						 "<meta name=\"salesforce-server-callback\" content=\"true\">\n" +
 								 "<meta name=\"salesforce-server-response\" content='"+ Buffer.from(JSON.stringify(bodyRes)).toString("base64") +"'>\n" +
 								// "<meta name=\"salesforce-server-starturl\" content='" + startURL +"'>\n" +
-								"<meta name=\"salesforce-server-starturl\" content=\"https://carama-salesforce.herokuapp.com\">\n" +
+								"<meta name=\"salesforce-server-starturl\" content=\"https://carama-salesforce.herokuapp.com/profile\">\n" +
 								"<meta name=\"salesforce-target\" content= \"#salesforce-login\">\n"+
 								"<meta name=\"salesforce-allowed-domains\" content=\"https://carama-salesforce.herokuapp.com/\">\n" +
 								"<script src=\""+ communityUrl + "/servlet/servlet.loginwidgetcontroller?type=javascript_widget\"" +" async defer></script>\n" +
