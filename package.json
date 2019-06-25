@@ -15,7 +15,8 @@
   "scripts": {
     "hint": "eslint ./lib/*.js ./tests/*.js",
     "test": "mocha --timeout=15000 tests/*.test.js",
-    "cover": "istanbul cover _mocha --report lcovonly -- --timeout=15000 --reporter spec tests/*.test.js"
+    "cover": "istanbul cover _mocha --report lcovonly -- --timeout=15000 --reporter spec tests/*.test.js",
+    "start":"node server.js"
   },
   "devDependencies": {
     "chai": "^2.3.0",
